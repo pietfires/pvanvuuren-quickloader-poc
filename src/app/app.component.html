@@ -1,0 +1,47 @@
+<div ><button mat-flat-button mat-button [color]="'accent'" (click)="sendMessage()"> Send Message</button>
+    <button mat-flat-button mat-button [color]="'accent'" (click)="clearMessage()">Clear Message</button>
+    </div>
+    <div class="content-wrapper" >
+<mat-grid-list cols="2" rowHeight="1:1">
+
+    <mat-grid-tile>
+        <mat-card>
+
+            <mat-card-content>
+                <div [placeholderIf]="!(salesOrder)"><img src="/assets/logo.png" /></div>
+
+                <h2 [placeholderIf]="!(salesOrder)">{{salesOrder!=undefined ? 'Item' : '&nbsp;'}}</h2>
+                <h1 [placeholderIf]="!(salesOrder)"> {{salesOrder?.item||'&nbsp;'}}</h1>
+                <h2 [placeholderIf]="!(salesOrder)">{{salesOrder!=undefined ? 'Quantity' : '&nbsp;'}}</h2>
+                <h1 [placeholderIf]="!(salesOrder)"> {{salesOrder?.quantity||'&nbsp;'}}</h1>
+                <h2 [placeholderIf]="!(salesOrder)">{{salesOrder!=undefined ? 'Price' : '&nbsp;'}}</h2>
+                <h1 [placeholderIf]="!(salesOrder)"> {{salesOrder?.price |currency:'USD' ||'&nbsp;'}}</h1>
+            </mat-card-content>
+            <mat-card-actions>
+                <button [placeholderIf]="!(salesOrder)" mat-flat-button mat-button [color]="'accent'">Ok</button>
+            </mat-card-actions>
+        </mat-card>
+
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card>
+            <mat-card-content>
+                <div [placeholderIf]="!(salesOrder)"><img src="/assets/logo.png" /></div>
+                <h2 [placeholderIf]="!(salesOrder)">{{salesOrder!=undefined ? 'Item' : '&nbsp;'}}</h2>
+                <h1 [placeholderIf]="!(salesOrder)"> {{salesOrder?.item||'&nbsp;'}}</h1>
+                <h2 [placeholderIf]="!(salesOrder)">{{salesOrder!=undefined ? 'Quantity' : '&nbsp;'}}</h2>
+                <h1 [placeholderIf]="!(salesOrder)"> {{salesOrder?.quantity||'&nbsp;'}}</h1>
+                <h2 [placeholderIf]="!(salesOrder)">{{salesOrder!=undefined ? 'Price' : '&nbsp;'}}</h2>
+                <h1 [placeholderIf]="!(salesOrder)"> {{salesOrder?.price |currency:'R' ||'&nbsp;'}}</h1>
+            </mat-card-content>
+            <mat-card-actions>
+                <button [placeholderIf]="!(salesOrder)" mat-flat-button mat-button [color]="'accent'">Ok</button>
+            </mat-card-actions>
+        </mat-card>
+
+    </mat-grid-tile>
+
+
+</mat-grid-list>
+</div>
